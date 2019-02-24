@@ -79,7 +79,7 @@ client.on('connection', function (socket) {
         // if it has, pull from mono then return, easy,
         // otherwise go through the full api :/
 
-        // init mongo and connect to the mongo server
+        // init mongo and connect to the mlab mongo server
         mongo.connect('mongodb://tweetlingo:tweetlingo123@ds054298.mlab.com:54298/tweetlingo', function (err, db) {
             if (err) {
                 throw err;
