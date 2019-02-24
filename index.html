@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title> Tweet Lingo - Twitter Word Cloud Generator </title>
+
+	<meta name="description" content="Tweet Lingo finds the most tweeted words on a Twitter account. Just enter a Twitter handle! Create your free Twitter word clouds. Tweet Lingo will also show word cloud statistics and twitter statistics for each Twitter handle or account generated">
+	<meta name="og:description" content="Tweet Lingo finds the most tweeted words on a Twitter account. Just enter a Twitter handle! Create your Twitter word clouds. Tweet Lingo will also show word cloud statistics and twitter statistics for each Twitter handle or account generated">
+	<meta name="keywords" content="word cloud, tag cloud, word clouds, tag clouds, word cloud generator, tag cloud generator, word cloud free, clickable word cloud, create word cloud, word cloud creator, pc, mac, tablet, phone, wordle, free, word cloud online, word cloud mobile, mobile">
+	<link href="bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="three-dots.min.css">
+	<link href="style.css" rel="stylesheet">
+	<link href="clientside.css" rel="stylesheet">
+	<script src="jquery.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script src="scripts.js"></script>
+	<script src="clientside.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"> </script>
+	<script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+	<!-- Webmaster Google Verify -->
+	<meta name="google-site-verification" content="RwTUx7Yy-tn502SCX4uKqZWtgf486WjyDfQRnoMVNpM" />
+
+
+</head>
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131638813-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'UA-131638813-1');
+</script>
+<meta name="google-site-verification" content="RwTUx7Yy-tn502SCX4uKqZWtgf486WjyDfQRnoMVNpM" />
+
+<!-- Google adsense -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-1695096510179432",
+		enable_page_level_ads: true
+	});
+</script>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 blued">
+				<h1 class="text-center text-primary" id=logofont>
+					Tweet Lingo
+				</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-1">
+			</div>
+			<div class="col-md-10 blued">
+				<h6 class="text-center">
+					Tweet Lingo finds the most tweeted words on a Twitter account and makes a word cloud out of them. Just enter a Twitter handle!
+					</h5>
+					<h6 class="text-center">
+					<span class="badge badge-warning" id="cloudcount">Loading count...</span><br>
+					</h6>
+			</div>
+			<div class="col-md-1">
+			</div>
+		</div>
+		<div class="row">
+
+			<div class="col-md-12">
+				<div id='betaresult'>
+					<div class="row">
+						<div class="col-md-1">
+						</div>
+						<div class="col-md-10">
+							<form role="form">
+								<div class="form-group">
+
+									<label for="exampleInputEmail1">
+										<span class="badge badge-info text-sec">Enter a Twitter Handle </span>
+									</label>
+									<input type="text" class="form-control" id="handleid" placeholder="e.g. '@nytimes' or just 'nytimes'">
+								</div>
+
+							</form>
+						</div>
+						<div class="col-md-1">
+						</div>
+					</div>
+
+
+					<div class="row" id="search">
+						<div class="col-md-1">
+						</div>
+						<div class="col-md-10">
+
+							<button type="button" class="btn btn-block btn-lg btn-info" id="buttonid">
+								Search
+							</button>
+						</div>
+						<div class="col-md-1">
+						</div>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-12">
+								<br>
+								<div class="row">
+									<div class="col-md-1">
+									</div>
+									<div class="col-md-10">
+										<div class="row">
+											<div class="col-md-6" id="back">
+
+											</div>
+											<div class="col-md-6" id="share">
+
+											</div>
+										</div>
+									</div>
+									<div class="col-md-1">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12"><br>
+										<center>
+											<!-- ads removed -->
+										</center>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+			</div>
+
+
+		</div>
+		<div class="row fixed-row-bottom ">
+			<div class="col-md-1">
+			</div>
+			<div class="col-md-10">
+				<h6 class="text-center text-danger" style="padding-top: 40px;">
+					2019 <strong>Tweet Lingo <a href="https://twitter.com/lingo_tweet"> <i  class="fab fa-twitter-square"></i></a> <a href="mailto:tweetlingo@gmail.com?Subject=Website Inquiry">Contact Us</a></strong></small>
+				</h6>
+			</div>
+			<div class="col-md-1">
+			</div>
+		</div>
+	</div>
+
+
+</body>
+
+
+<!-- ad infolinks -->
+<script type="text/javascript"> var infolinks_pid = 3155676; var infolinks_wsid = 0; </script>
+<script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
+
+</html>
+
+
+
+
+

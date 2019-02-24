@@ -1,0 +1,26 @@
+<!-- CSS STUFF -->
+
+	body {
+background-color: white;
+font-family: 'Roboto', sans-serif;
+}
+
+
+#logofont {
+font-family: 'Righteous', cursive;
+color: #1da1f2;
+}
+/* .col-md-10 {
+  border: 1px solid;
+} */
+
+.blued {
+  border-top: 5px solid blue;
+  padding: 10px 15px;
+}
+
+.text-primary{
+	font-size:8vw;
+}
+
+
